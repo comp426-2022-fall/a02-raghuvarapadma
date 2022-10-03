@@ -5,6 +5,7 @@ import moment from "moment-timezone"
 import fetch from "node-fetch"
 const args = minimist(process.argv.slice(2));
 
+
 if (args.h === true) {
     console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
     console.log("    -h Show this help message and exit.")
@@ -42,6 +43,7 @@ if (args.h === true) {
     if (args.d) {
         day = args.d;
     }
+    console.log(day)
 
     let url = "https://api.open-meteo.com/v1/forecast?";
     url = url + 'latitude=' + latitude + '&longitude=' + longitude + "&timezone=" + timezone + "&daily=precipitation_hours"
