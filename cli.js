@@ -38,7 +38,7 @@ if (args.h === true) {
         timezone = args.z
     }
 
-    let day = 0;
+    let day = 1;
 
     if (args.d) {
         day = args.d;
@@ -64,10 +64,10 @@ if (args.h === true) {
         }
         if (day == 0) {
             string += "today."
-        } else if (day > 1) {
-            string += "in " + days + " days."
-        } else {
+        } else if (day == 1) {
             string += "tomorrow."
+        } else {
+            string += "in " + days + " days."
         }
         console.log(string)
     }
