@@ -4,6 +4,7 @@ import minimist from "minimist"
 import moment from "moment-timezone"
 import fetch from "node-fetch"
 const args = minimist(process.argv.slice(2));
+console.log(args)
 
 
 if (args.h === true) {
@@ -20,27 +21,28 @@ if (args.h === true) {
     let longitude = 1;
     let latitude = 1;
 
-    if (args.n) {
+    if ("n" in args) {
         latitude = args.n;
     }
-    else if (args.s) {
+    else if ("s" in args) {
         latitude = -args.s;
     }
 
-    if (args.e) {
+    if ("e" in args) {
         longitude = args.e;
     }
-    else if (args.w) {
+    else if ("w" in args) {
         longitude = -args.w;
     }
 
-    if (args.z) {
+    if ("z" in args) {
         timezone = args.z
     }
 
     let day = 1;
 
-    if (args.d) {
+
+    if ("d" in args) {
         day = args.d;
     }
 
@@ -50,7 +52,7 @@ if (args.h === true) {
     const data = await response.json();
 
 
-    if (args.j) {
+    if ("j" in args) {
         console.log(data);
     } else {
         let precipitation = data.daily.precipitation_hours
