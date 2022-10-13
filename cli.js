@@ -43,7 +43,6 @@ if (args.h === true) {
     if (args.d) {
         day = args.d;
     }
-    console.log(day)
 
     let url = "https://api.open-meteo.com/v1/forecast?";
     url = url + 'latitude=' + latitude + '&longitude=' + longitude + "&timezone=" + timezone + "&daily=precipitation_hours"
@@ -57,10 +56,10 @@ if (args.h === true) {
         let precipitation = data.daily.precipitation_hours
         precipitation = precipitation[day];
         let string = ""
-        if (precipitation > 0) {
-            string += "You might need your galoshes "
-        } else {
+        if (precipitation == 0) {
             string += "You will not need your galoshes "
+        } else {
+            string += "You might need your galoshes "
         }
         if (day == 0) {
             string += "today."
