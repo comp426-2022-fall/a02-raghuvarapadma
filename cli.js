@@ -38,7 +38,7 @@ if (args.h === true) {
         timezone = args.z
     }
 
-    let day = 1;
+    let day = 0;
 
     if (args.d) {
         day = args.d;
