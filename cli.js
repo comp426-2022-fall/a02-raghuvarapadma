@@ -26,6 +26,8 @@ if (args.h === true) {
     }
     else if ("s" in args) {
         latitude = -args.s;
+    } else {
+        console.log("Latitude must be in range");
     }
 
     if ("e" in args) {
@@ -33,6 +35,8 @@ if (args.h === true) {
     }
     else if ("w" in args) {
         longitude = -args.w;
+    } else {
+        console.log("Longitude must be in range");
     }
 
     if ("z" in args) {
